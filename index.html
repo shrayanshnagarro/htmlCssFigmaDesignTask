@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataPrizma — Digital Progress</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page-shell">
+      <header class="hero-header" aria-label="Site hero section">
+        <div class="hero-header__topbar">
+          <a href="#" aria-label="Go to homepage">
+            <img
+              class="logo-image"
+              src="images/dataPrizmaLogo.svg"
+              alt="DataPrizma logo"
+            />
+          </a>
+
+          <nav class="main-nav" aria-label="Primary navigation">
+            <ul class="main-nav__list">
+              <li><a href="#products">Products</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#company">Company</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a class="button button--primary" href="#contact">Contact</a>
+            <a
+              class="button button--secondary"
+              href="#language"
+              aria-label="Switch language"
+            >
+              <img
+                class="button__icon"
+                src="images/enDown.svg"
+                alt="Language icon"
+              />
+              <!-- <span class="button__icon" aria-hidden="true">🌐</span>
+              EN
+              <span aria-hidden="true"
+                ><img class="button__arrow" src="images/downArrow.png" alt=""
+              /></span> -->
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <h1>DATAPRIZMA</h1>
+          <h1>DIGITAL PROGRESS</h1>
+          <p class="hero-text">
+            Technologies that change the rules of the game.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button button--hero button--primary" href="#contact"
+              >Contact</a
+            >
+            <a class="button button--hero button--ghost" href="#services"
+              >Services</a
+            >
+          </div>
+        </div>
+      </header>
+      <section class="press-section" aria-label="Press section">
+        <h2 class="press-heading">Пользующиеся доверием лидеров отрасли</h2>
+        <div class="press-logos">
+          <div class="press-logos__row1">
+            <img src="images/press1.png" alt="Forbes logo" />
+            <img src="images/press2.png" alt="TechCrunch logo" />
+            <img src="images/press3.png" alt="Business Insider logo" />
+          </div>
+          <div class="press-logos__row2">
+            <img src="images/press4.png" alt="VentureBeat logo" />
+            <img src="images/press5.png" alt="The Next Web logo" />
+          </div>
+        </div>
+      </section>
+      <section class="features-section" aria-label="Features section">
+        <div class="features-heading">
+          <h2>
+            Надежные услуги для вашего<br />
+            успеха и процветания.
+          </h2>
+          <p>
+            Доверьтесь профессионалам и обеспечьте свой успех надежными
+            услугами.
+          </p>
+        </div>
+        <div class="features-container">
+          <div class="features-container1">
+            <div class="features-image-wrapper features-image1">
+              <img src="images/featureImg1.jpg" alt="" />
+              <div class="features-text">
+                <h3>ЦИФРОВАЯ ТРАНСФОРМАЦИЯ</h3>
+                <p>Профессиональный аудит: интеграция, адаптация и обучение</p>
+              </div>
+            </div>
+            <div class="features-image-wrapper features-image2">
+              <img src="images/featureImg2.jpg" alt="" />
+              <div class="features-text">
+                <h3>СТРАТЕГИЧЕСКОЕ ПЛАНИРОВАНИЕ</h3>
+                <p>Разработка и внедрение эффективных решений для роста</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="features-container2">
+            <div class="features-image-wrapper features-image3">
+              <img src="images/featureImg3.jpg" alt="" />
+              <div class="features-text">
+                <h3>АНАЛИТИКА И INSIGHTS</h3>
+                <p>
+                  Данные, которые принимают Данные, которые принимают Данные,
+                  которые принимают правильные бизнес-решения
+                </p>
+              </div>
+            </div>
+            <div class="features-image-wrapper features-image4">
+              <img
+                class="features-image4-default"
+                src="images/featureImg4.png"
+                alt=""
+              />
+              <img
+                class="features-image4-hover"
+                src="images/featureImg4Varient2.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-section" aria-label="Products section">
+        <div class="product-headings">
+          <div class="products-tag" aria-label="Категория">ПРОДУКТЫ</div>
+
+          <h2 class="products-title">
+            ТОПОВЫЕ ПРОДУКТЫ ДЛЯ ВАШЕГО
+            <span>ВЫБОРА И УДОВЛЕТВОРЕНИЯ</span>
+            <span>ПОТРЕБНОСТЕЙ.</span>
+          </h2>
+
+          <p class="products-subtitle">
+            Технологии, которые меняют правила игры.
+          </p>
+        </div>
+        <div class="products-container">
+          <!-- Hidden radio inputs for CSS-only switching -->
+          <input
+            type="radio"
+            id="product-virtual-office"
+            name="product"
+            value="virtual-office"
+            class="product-radio"
+            checked
+          />
+          <input
+            type="radio"
+            id="product-netdoc"
+            name="product"
+            value="netdoc"
+            class="product-radio"
+          />
+          <input
+            type="radio"
+            id="product-d-hrm"
+            name="product"
+            value="d-hrm"
+            class="product-radio"
+          />
+
+          <!-- Left Section -->
+          <div class="products-left">
+            <div class="products-list">
+              <!-- Product 1: Virtual Office -->
+              <label
+                for="product-virtual-office"
+                class="product-item active"
+                data-product="virtual-office"
+              >
+                <div class="product-header">
+                  <h3 class="product-name">Virtual Office</h3>
+                </div>
+                <p class="product-description">
+                  Система для поддержки удаленной работы, обеспечивающая
+                  постоянную готовность к рабочему сотрудничеству и
+                  взаимодействия с сотрудниками в основном, осуществляется в
+                  электронном виде.
+                </p>
+              </label>
+
+              <!-- Product 2: NetDoc -->
+              <label
+                for="product-netdoc"
+                class="product-item"
+                data-product="netdoc"
+              >
+                <div class="product-header">
+                  <h3 class="product-name">NetDoc</h3>
+                </div>
+                <p class="product-description">
+                  Система обмена договорами, электронными счетами, документами и
+                  визитками между организациями посредством ЭЦП.
+                </p>
+              </label>
+
+              <!-- Product 3: D-Hrm -->
+              <label
+                for="product-d-hrm"
+                class="product-item"
+                data-product="d-hrm"
+              >
+                <div class="product-header">
+                  <h3 class="product-name">D-Hrm</h3>
+                </div>
+                <p class="product-description">
+                  Инновационная цифровая система управления персоналом
+                </p>
+              </label>
+            </div>
+          </div>
+
+          <!-- Right Section -->
+          <div class="products-right" aria-label="Галерея продуктов">
+            <div class="product-image-container">
+              <!-- Virtual Office Image -->
+              <div class="product-image active" data-product="virtual-office">
+                <img
+                  src="images/productImage1.jpg"
+                  alt="Virtual Office - Система для поддержки удаленной работы"
+                />
+              </div>
+
+              <!-- NetDoc Image -->
+              <div class="product-image" data-product="netdoc">
+                <img
+                  src="images/productImage2.jpg"
+                  alt="NetDoc - Система обмена документами"
+                />
+              </div>
+
+              <!-- D-Hrm Image -->
+              <div class="product-image" data-product="d-hrm">
+                <img
+                  src="images/productImage3.jpg"
+                  alt="D-Hrm - Система управления персоналом"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section" aria-label="Testimonials section">
+        <h1 class="testimonials-heading">
+          Ускорение дляг<br />лобальных компаний
+        </h1>
+        <div class="testimonials-container">
+          <article class="testimonial-card">
+            <p class="testimonial-text">
+              “Мир разработки программного обеспечения постоянно меняется, и
+              инновации играют ключевую роль в этом процессе. Использование AI и
+              машинного обучения усиливает функциональность ПО, делая его более
+              интеллектуальным и адаптивным. Блокчейн обеспечивает безопасность
+              данных и создает прозрачные системы, что особенно важно в
+              финансовых и медицинских сферах. Связанные устройства создают
+              сеть, которая обогащает пользовательский опыт и управление
+              ресурсами. Низкопоточная Архитектура: Микросервисы и сервер-лесс
+              подходы повышают гибкость и упрощают масштабирование приложений.
+              Инновации в области кибербезопасности защищают данные от угроз и
+              создают устойчивые системы. Инновации в разработке ПО становятся
+              драйвером для создания более эффективных, безопасных и
+              интеллектуальных приложений, поднимая отрасль на новый уровень.”
+            </p>
+            <div class="testimonial-author">
+              <img
+                class="testimonial-avatar"
+                src="images/avatar1.jpg"
+                alt="Yana Kovka"
+              />
+              <div class="testimonial-info">
+                <h3 class="testimonial-name">Yana Kovka</h3>
+                <p class="testimonial-title">Senior Front-End Developer</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-text">
+              “В мире промышленности инновации становятся ключевым фактором
+              успеха. Использование IoT и сенсоров позволяет следить за
+              состоянием оборудования в режиме реального времени, предотвращая
+              отказы и увеличивая производительность. Аналитика данных и
+              машинное обучение помогают предсказать потенциальные сбои в работе
+              оборудования, позволяя провести профилактические мероприятия.
+              Автоматизация процессов с помощью роботизированных систем снижает
+              ручной труд и повышает эффективность производства. Переход к
+              облачным платформам упрощает управление данными, обеспечивает
+              удаленный доступ и повышает гибкость в настройке оборудования.
+              Внедрение энергосберегающих решений, таких как LED-освещение и
+              оптимизация энергопотребления, помогает снизить затраты и
+              уменьшить воздействие на окружающую среду. Эти инновации не только
+              оптимизируют роизводственные процессы, но и содействуют
+              устойчивому развитию промышленности, делая ее более эффективной и
+              экологически безопасной.!”
+            </p>
+            <div class="testimonial-author">
+              <img
+                class="testimonial-avatar"
+                src="images/avatar2.jpg"
+                alt="Andrey Yaskin"
+              />
+              <div class="testimonial-info">
+                <h3 class="testimonial-name">Andrey Yaskin</h3>
+                <p class="testimonial-title">Middle UI Designer</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <p class="testimonial-text">
+              “Xотите обеспечить процветание вашего бизнеса в будущем?
+              Объедините людей с различными навыками и опытом. Это стимулирует
+              творчество и инновации.Определите ясные цели и направления.
+              Четкость в задачах помогает достичь успеха.Инвестируйте в обучение
+              и рост сотрудников. Поддержите их стремление к улучшению
+              навыков.Постройте открытую и эффективную коммуникацию внутри
+              команды. Доверие - ключевой элемент успеха.Поощряйте инициативу и
+              креативность. Это вдохновляет сотрудников на достижение великих
+              результатов. Создавайте талантливые команды сегодня - обеспечьте
+              успешное завтра вашего бизнеса!”
+            </p>
+            <div class="testimonial-author">
+              <img
+                class="testimonial-avatar"
+                src="images/avatar3.jpg"
+                alt="Ildar Zairov"
+              />
+              <div class="testimonial-info">
+                <h3 class="testimonial-name">Ildar Zairov</h3>
+                <p class="testimonial-title">Project Manager</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer" aria-label="Footer">
+        <div class="footer-content">
+          <div class="footer-column footer-logo-column">
+            <div class="footer-logo">
+              <img src="images/footerLogo.svg" alt="DataPrizma" />
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">ПРОДУКТЫ</h3>
+            <ul class="footer-list">
+              <li><a href="#virtual-office">Virtual Office</a></li>
+              <li><a href="#netdoc">NetDoc</a></li>
+              <li><a href="#d-hrm">D-Hrm</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="footer-heading">УСЛУГИ</h3>
+            <ul class="footer-list">
+              <li>
+                <a href="#digital-transformation">Цифровая трансформация</a>
+              </li>
+              <li><a href="#software-development">Разработка ПО</a></li>
+              <li><a href="#iot-automation">IoT и автоматизация</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column footer-contact-column">
+            <div class="footer-contact">
+              <a href="tel:+77666666776" class="footer-phone"
+                >+77 666 666 77 66</a
+              >
+              <a href="mailto:dataprizma@box.com" class="footer-email"
+                >dataprizma@box.com</a
+              >
+            </div>
+            <div class="footer-socials">
+              <a href="#facebook" aria-label="Facebook" class="social-link"
+                ><img src="images/facebook-fill.svg" alt="Facebook"
+              /></a>
+              <a href="#instagram" aria-label="Instagram" class="social-link"
+                ><img src="images/instagram-fill.svg" alt="Instagram"
+              /></a>
+              <a href="#twitter" aria-label="Twitter" class="social-link"
+                ><img src="images/twitter-fill.svg" alt="Twitter"
+              /></a>
+              <a href="#youtube" aria-label="YouTube" class="social-link"
+                ><img src="images/youtube-fill.svg" alt="YouTube"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">© Copyright 2023. All Right Reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
