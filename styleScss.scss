@@ -1,0 +1,365 @@
+// =========================
+// VARIABLES
+// =========================
+$color-text-primary: #111827;
+$color-text-secondary: #475569;
+$color-text-muted: #6b7280;
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-accent-blue: #4344ff;
+$color-accent-hover: #1d4ed8;
+$color-accent-cyan: #1bb2d3;
+$color-accent-orange: rgba(255, 122, 0, 1);
+
+$color-footer-bg: rgba(27, 32, 33, 1);
+
+$font-primary: Rubik, "Inter", system-ui, -apple-system,
+  BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+$font-size-base: 16px;
+$font-size-xl: 72px;
+$font-size-lg: 1.15rem;
+$font-size-md: 1rem;
+$font-size-sm: 0.95rem;
+
+$line-height-base: 1.5;
+$line-height-tight: 115%;
+
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 48px;
+
+$radius-pill: 999px;
+
+$shadow-main: 0 20px 80px rgba(0, 0, 0, 0.2);
+$shadow-button: 0 16px 34px rgba(67, 68, 255, 0.24);
+
+$hero-gradient: radial-gradient(
+  circle at top left,
+  #d7f7ff 0%,
+  #c8f2ff 20%,
+  #d9fbff 40%,
+  #e8fdff 100%
+);
+
+// =========================
+// GLOBAL
+// =========================
+:root {
+  color-scheme: light;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-primary;
+  background: $color-black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: $color-black;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// =========================
+// LAYOUT
+// =========================
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $space-lg;
+}
+
+// =========================
+// HERO
+// =========================
+.hero-header {
+  position: relative;
+  width: min(1340px, 100%);
+  min-height: 600px;
+  border-bottom-left-radius: 615px;
+  border-bottom-right-radius: 615px;
+  background: $hero-gradient;
+  box-shadow: $shadow-main;
+  padding: $space-lg $space-xl;
+
+  &__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-md;
+  }
+}
+
+.logo-image {
+  height: 32px;
+}
+
+// NAV
+.main-nav {
+  flex: 1;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: $space-lg;
+    list-style: none;
+
+    a {
+      font-size: 0.98rem;
+      font-weight: 500;
+      transition: 180ms;
+
+      &:hover,
+      &:focus-visible {
+        color: $color-accent-hover;
+      }
+    }
+  }
+}
+
+// =========================
+// BUTTONS
+// =========================
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 $space-md;
+  min-height: 52px;
+  border-radius: $radius-pill;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  transition: 200ms;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &--primary {
+    background: $color-accent-blue;
+    color: $color-white;
+    box-shadow: $shadow-button;
+  }
+
+  &--secondary {
+    color: $color-text-primary;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  &--ghost {
+    background: url("images/buttonBackgroundImage.jpg") center/cover;
+    color: $color-white;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: $radius-pill;
+    }
+
+    &::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-left: 8px;
+      background: url("images/rightArrow.svg") no-repeat center/contain;
+      display: inline-block;
+    }
+  }
+}
+
+// =========================
+// HERO CONTENT
+// =========================
+.hero-content {
+  margin-top: 100px;
+  max-width: 920px;
+  text-align: center;
+  margin-inline: auto;
+
+  h1 {
+    font-size: $font-size-xl;
+    font-weight: 400;
+    line-height: $line-height-tight;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .hero-text {
+    margin-top: 28px;
+    color: $color-text-secondary;
+    font-size: $font-size-lg;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 44px;
+  }
+}
+
+// =========================
+// FEATURES
+// =========================
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &1,
+  &2 {
+    display: flex;
+    gap: 30px;
+  }
+
+  &2 {
+    img:first-child {
+      flex: 2;
+    }
+    img:last-child {
+      flex: 8;
+    }
+  }
+}
+
+// =========================
+// TESTIMONIALS
+// =========================
+.testimonials-section {
+  width: min(1450px, 95%);
+  padding: $space-xl;
+  background: $color-accent-orange;
+  display: flex;
+  flex-direction: column;
+
+  .testimonials-heading {
+    font-size: $font-size-xl;
+    line-height: $line-height-tight;
+    letter-spacing: -0.02em;
+    padding: 0 $space-lg;
+  }
+
+  .testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 0 $space-lg;
+  }
+
+  .testimonial-card {
+    padding-top: 32px;
+    border-top: 1px solid $color-black;
+  }
+
+  .testimonial-text {
+    font-size: $font-size-sm;
+    line-height: 1.6;
+  }
+
+  .testimonial-title {
+    color: $color-text-muted;
+  }
+}
+
+// =========================
+// FOOTER
+// =========================
+.footer {
+  background: $color-footer-bg;
+  color: #e5e7eb;
+  padding: $space-xl;
+  display: flex;
+  flex-direction: column;
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 42px;
+    padding: 0 $space-lg;
+  }
+
+  &-heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    a:hover {
+      color: $color-accent-cyan;
+    }
+  }
+
+  &-bottom {
+    padding-top: 60px;
+    text-align: center;
+  }
+}
+
+// =========================
+// ANIMATION
+// =========================
+@keyframes button-press {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(2px); }
+  100% { transform: translateY(0); }
+}
+
+// =========================
+// MEDIA QUERIES
+// =========================
+@media (max-width: 980px) {
+  .testimonials-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-header {
+    padding: $space-md;
+  }
+}
+
+@media (max-width: 720px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3rem, 9vw, 4.6rem);
+  }
+
+  .button {
+    width: 100%;
+  }
+}
