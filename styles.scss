@@ -1439,7 +1439,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 
 // --- Product Item ---
 .product-item {
-  padding: $spacing-lg 0 $spacing-lg 28px;
+  padding: 6px 0 $spacing-lg 20px;
   cursor: pointer;
   transition: all $transition-cubic;
   position: relative;
@@ -1448,21 +1448,19 @@ SECOND CLICK -> RETURN TO DEFAULT
   outline: none;
   display: block;
 
+  .product-description {
+    display: none;
+  }
+
   &:focus-visible {
     outline: 2px solid $color-orange-highlight;
     outline-offset: 2px;
   }
 
   &:hover {
-    padding-left: $spacing-xl;
 
     .product-name {
       color: $color-orange-highlight;
-    }
-
-    .product-description {
-      opacity: 1;
-      color: $color-product-desc-hover;
     }
   }
 
@@ -1598,6 +1596,7 @@ SECOND CLICK -> RETURN TO DEFAULT
   }
 
   .product-description {
+    display: block;
     opacity: 1;
     color: $color-product-desc-active;
   }
