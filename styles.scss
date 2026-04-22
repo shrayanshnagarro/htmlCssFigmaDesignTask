@@ -167,19 +167,21 @@ a {
 
 .hero-header {
   position: relative;
-  width: min(#{$max-width-page}, 100%);
+  overflow: hidden;
+  cursor: pointer;
+  // width: min(#{$max-width-page}, 100%);
+  width: clamp(1246px, 66vw, 1600px);
   min-height: 600px;
   border-bottom-left-radius: $radius-hero-lg;
   border-bottom-right-radius: $radius-hero-lg;
-  background: radial-gradient(
-    circle at top left,
-    $color-hero-bg-start 0%,
-    $color-hero-bg-mid1 20%,
-    $color-hero-bg-mid2 40%,
-    $color-hero-bg-end 100%
-  );
+  background: radial-gradient(circle at top left,
+      $color-hero-bg-start 0%,
+      $color-hero-bg-mid1 20%,
+      $color-hero-bg-mid2 40%,
+      $color-hero-bg-end 100%);
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
   padding: $spacing-xl $spacing-3xl;
+  transition: all 250ms ease-out;
 
   &__topbar {
     position: relative;
@@ -190,25 +192,36 @@ a {
     gap: $spacing-lg;
   }
 
-  @include respond-below($bp-xl) {
-    padding: 28px $spacing-lg;
+  @include respond-below($bp-3xl) {
+    //1200
+    width: 82vw;
+  }
+
+  @include respond-below($bp-2xl) {
+    //1024
+    width: 90vw;
     min-height: 700px;
     border-bottom-left-radius: $radius-hero-md;
     border-bottom-right-radius: $radius-hero-md;
   }
 
   @include respond-below($bp-md) {
-    border-bottom-left-radius: $radius-hero-sm;
-    border-bottom-right-radius: $radius-hero-sm;
+    //720
+    width: 100%;
+    min-width: unset;
     min-height: 680px;
     padding: 20px $spacing-md;
+    border-bottom-left-radius: $radius-hero-sm;
+    border-bottom-right-radius: $radius-hero-sm;
   }
 
   @include respond-below($bp-sm) {
-    border-bottom-left-radius: $radius-hero-xs;
-    border-bottom-right-radius: $radius-hero-xs;
+    //540
+    width: 100%;
     min-height: 600px;
     padding: $spacing-md $spacing-sm;
+    border-bottom-left-radius: $radius-hero-xs;
+    border-bottom-right-radius: $radius-hero-xs;
   }
 }
 
@@ -499,6 +512,178 @@ a {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+/* keep content above bg */
+.hero-header__topbar,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================================
+CLICK -> Default → V2 → V4 → V5
+==================================================== */
+
+#hero-trigger:checked+label .hero-header {
+  animation: heroShape 640ms ease-out forwards;
+}
+
+#hero-trigger:checked+label .hero-header .hero-content {
+  animation: contentStates 640ms steps(1, end) forwards;
+}
+
+#hero-trigger:checked+label .hero-header .hero-text,
+#hero-trigger:checked+label .hero-header .hero-buttons {
+  animation: hideSecondary 200ms ease-out forwards;
+}
+
+/* ====================================================
+VARIANT STATES
+==================================================== */
+@keyframes heroShape {
+
+  /* DEFAULT */
+  0% {
+    min-height: 600px;
+    border-radius: 0 0 615px 615px;
+  }
+
+
+  /* ---------- Variant2 ---------- */
+  31% {
+    min-height: 500px;
+    border-radius: 0 0 520px 520px;
+  }
+
+  34% {
+    min-height: 500px;
+    border-radius: 0 0 520px 520px;
+  }
+
+
+  /* ---------- Variant4 ---------- */
+  65% {
+    min-height: 360px;
+    border-radius: 0 0 260px 260px;
+  }
+
+  68% {
+    min-height: 360px;
+    border-radius: 0 0 260px 260px;
+  }
+
+
+  /* ---------- Variant5 ---------- */
+  100% {
+    min-height: 120px;
+    border-radius: 60px;
+  }
+
+}
+
+/* hero-content disappears in V4 */
+@keyframes contentStates {
+
+  0% {
+    display: block;
+    margin-top: 100px;
+    opacity: 1;
+  }
+
+  31% {
+    display: block;
+    margin-top: 60px;
+    opacity: 1;
+  }
+
+  65% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+}
+
+#hero-trigger:checked+label .hero-header .hero-text {
+  animation: removeHeroText 200ms steps(1, end) forwards;
+}
+
+#hero-trigger:checked+label .hero-header .hero-buttons {
+  animation: removeHeroButtons 200ms steps(1, end) forwards;
+}
+
+@keyframes removeHeroText {
+
+  0% {
+    display: block;
+    max-height: 200px;
+    margin-top: 28px;
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+}
+
+@keyframes removeHeroButtons {
+
+  0% {
+    display: flex;
+    max-height: 120px;
+    margin-top: 44px;
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+}
+
+/* ====================================================
+SECOND CLICK -> RETURN TO DEFAULT
+==================================================== */
+
+#hero-trigger:not(:checked)+label .hero-header {
+  transition:
+    all 250ms ease-out;
+}
+
+#hero-trigger:not(:checked)+label .hero-header::before {
+  transition:
+    all 250ms ease-out;
+}
+
+#hero-trigger:not(:checked)+label .hero-header .hero-content {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 100px;
+  transition: all 250ms ease-out;
 }
 
 // ============================================================

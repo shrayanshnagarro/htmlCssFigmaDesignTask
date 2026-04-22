@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   color-scheme: light;
   font-family: "Rubik", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -54,13 +55,16 @@ a {
 
 .hero-header {
   position: relative;
-  width: min(1340px, 100%);
+  overflow: hidden;
+  cursor: pointer;
+  width: clamp(1246px, 66vw, 1600px);
   min-height: 600px;
   border-bottom-left-radius: 615px;
   border-bottom-right-radius: 615px;
   background: radial-gradient(circle at top left, #d7f7ff 0%, #c8f2ff 20%, #d9fbff 40%, #e8fdff 100%);
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.2);
   padding: 32px 48px;
+  transition: all 250ms ease-out;
 }
 .hero-header__topbar {
   position: relative;
@@ -70,9 +74,14 @@ a {
   justify-content: space-between;
   gap: 24px;
 }
-@media (max-width: 980px) {
+@media (max-width: 1200px) {
   .hero-header {
-    padding: 28px 24px;
+    width: 82vw;
+  }
+}
+@media (max-width: 1024px) {
+  .hero-header {
+    width: 90vw;
     min-height: 700px;
     border-bottom-left-radius: 500px;
     border-bottom-right-radius: 500px;
@@ -80,18 +89,21 @@ a {
 }
 @media (max-width: 720px) {
   .hero-header {
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    width: 100%;
+    min-width: unset;
     min-height: 680px;
     padding: 20px 16px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
 }
 @media (max-width: 540px) {
   .hero-header {
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    width: 100%;
     min-height: 600px;
     padding: 16px 12px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 }
 
@@ -369,6 +381,149 @@ a {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+/* keep content above bg */
+.hero-header__topbar,
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ====================================================
+CLICK -> Default → V2 → V4 → V5
+==================================================== */
+#hero-trigger:checked + label .hero-header {
+  animation: heroShape 640ms ease-out forwards;
+}
+
+#hero-trigger:checked + label .hero-header .hero-content {
+  animation: contentStates 640ms steps(1, end) forwards;
+}
+
+#hero-trigger:checked + label .hero-header .hero-text,
+#hero-trigger:checked + label .hero-header .hero-buttons {
+  animation: hideSecondary 200ms ease-out forwards;
+}
+
+/* ====================================================
+VARIANT STATES
+==================================================== */
+@keyframes heroShape {
+  /* DEFAULT */
+  0% {
+    min-height: 600px;
+    border-radius: 0 0 615px 615px;
+  }
+  /* ---------- Variant2 ---------- */
+  31% {
+    min-height: 500px;
+    border-radius: 0 0 520px 520px;
+  }
+  34% {
+    min-height: 500px;
+    border-radius: 0 0 520px 520px;
+  }
+  /* ---------- Variant4 ---------- */
+  65% {
+    min-height: 360px;
+    border-radius: 0 0 260px 260px;
+  }
+  68% {
+    min-height: 360px;
+    border-radius: 0 0 260px 260px;
+  }
+  /* ---------- Variant5 ---------- */
+  100% {
+    min-height: 120px;
+    border-radius: 60px;
+  }
+}
+/* hero-content disappears in V4 */
+@keyframes contentStates {
+  0% {
+    display: block;
+    margin-top: 100px;
+    opacity: 1;
+  }
+  31% {
+    display: block;
+    margin-top: 60px;
+    opacity: 1;
+  }
+  65% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+#hero-trigger:checked + label .hero-header .hero-text {
+  animation: removeHeroText 200ms steps(1, end) forwards;
+}
+
+#hero-trigger:checked + label .hero-header .hero-buttons {
+  animation: removeHeroButtons 200ms steps(1, end) forwards;
+}
+
+@keyframes removeHeroText {
+  0% {
+    display: block;
+    max-height: 200px;
+    margin-top: 28px;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+@keyframes removeHeroButtons {
+  0% {
+    display: flex;
+    max-height: 120px;
+    margin-top: 44px;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+/* ====================================================
+SECOND CLICK -> RETURN TO DEFAULT
+==================================================== */
+#hero-trigger:not(:checked) + label .hero-header {
+  transition: all 250ms ease-out;
+}
+
+#hero-trigger:not(:checked) + label .hero-header::before {
+  transition: all 250ms ease-out;
+}
+
+#hero-trigger:not(:checked) + label .hero-header .hero-content {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 100px;
+  transition: all 250ms ease-out;
 }
 
 .press-section {
