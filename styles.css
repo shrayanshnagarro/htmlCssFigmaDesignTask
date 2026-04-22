@@ -436,6 +436,7 @@ a {
   height: 100%;
   object-fit: cover;
   transition: opacity 500ms ease-out;
+  display: block;
 }
 
 .features-image4-default {
@@ -454,6 +455,13 @@ a {
 
 .features-image-wrapper.features-image4:hover .features-image4-hover {
   opacity: 1;
+}
+
+/* Ensure image 4 is visible on all screen sizes */
+.features-image-wrapper.features-image4 {
+  position: relative;
+  overflow: hidden;
+  display: block;
 }
 
 @media (max-width: 1024px) {
@@ -565,6 +573,12 @@ a {
   .features-container2 .features-image-wrapper {
     height: 280px;
     flex: 1 !important;
+  }
+
+  /* Ensure 4th image stays visible on mobile */
+  .features-image-wrapper.features-image4 {
+    height: 280px !important;
+    min-height: 280px;
   }
 
   .features-text h3 {
