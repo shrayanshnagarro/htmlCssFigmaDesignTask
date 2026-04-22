@@ -109,12 +109,14 @@ a {
 
 .logo-image {
   height: 32px;
-  width: auto;
+  width: 150px;
+  max-width: 150px;
+  flex-shrink: 0;
   display: block;
 }
-@media (max-width: 540px) {
+@media (max-width: 720px) {
   .logo-image {
-    height: 28px;
+    margin: 0 auto;
   }
 }
 
@@ -182,6 +184,17 @@ a {
   }
 }
 
+@media (max-width: 1100px) and (min-width: 700px) {
+  .hero-header__topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (max-width: 720px) {
   .hero-header__topbar {
     flex-direction: column;
@@ -254,7 +267,10 @@ a {
   width: 3px;
 }
 .button__icon {
+  width: 86px;
   margin-right: 10px;
+  flex-shrink: 0;
+  max-width: 86px;
 }
 @media (max-width: 540px) {
   .button__icon {
@@ -270,7 +286,6 @@ a {
 }
 @media (max-width: 720px) {
   .button {
-    width: 100%;
     min-width: auto;
     min-height: 44px;
     font-size: 0.9rem;
@@ -286,7 +301,8 @@ a {
 
 @media (max-width: 720px) {
   .button--hero {
-    min-width: auto;
+    max-width: 170px;
+    min-width: 170px;
   }
 }
 @keyframes button-press {
@@ -380,6 +396,7 @@ a {
   .hero-buttons {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
 }
 
@@ -813,7 +830,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 @media (max-width: 540px) {
   .features-container2 .features-image-wrapper:last-child {
     height: 280px;
-    flex: 1 !important;
+    flex: 1;
   }
 }
 
@@ -896,6 +913,11 @@ SECOND CLICK -> RETURN TO DEFAULT
   }
 }
 
+.features-image4 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
 .features-image4 .features-image4-default,
 .features-image4 .features-image4-hover {
   position: absolute;
@@ -905,6 +927,7 @@ SECOND CLICK -> RETURN TO DEFAULT
   height: 100%;
   object-fit: cover;
   transition: opacity 500ms ease-out;
+  display: block;
 }
 .features-image4 .features-image4-default {
   opacity: 1;
@@ -919,6 +942,12 @@ SECOND CLICK -> RETURN TO DEFAULT
 }
 .features-image4:hover .features-image4-hover {
   opacity: 1;
+}
+@media (max-width: 540px) {
+  .features-image4 {
+    height: 280px !important;
+    min-height: 280px;
+  }
 }
 
 .testimonials-section {

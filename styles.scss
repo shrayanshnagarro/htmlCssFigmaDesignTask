@@ -228,11 +228,13 @@ a {
 // --- Logo ---
 .logo-image {
   height: 32px;
-  width: auto;
+  width: 150px;
+  max-width: 150px;
+  flex-shrink: 0;
   display: block;
 
-  @include respond-below($bp-sm) {
-    height: 28px;
+  @include respond-below($bp-md) {
+    margin: 0 auto;
   }
 }
 
@@ -301,6 +303,20 @@ a {
 }
 
 // Topbar responsive layout
+// Between 1100px and 700px: logo + nav on one line, actions on next line
+@media (max-width: 1100px) and (min-width: 700px) {
+  .hero-header__topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 @include respond-below($bp-md) {
   .hero-header__topbar {
     flex-direction: column;
@@ -392,7 +408,10 @@ a {
   }
 
   &__icon {
+    width: 86px;
     margin-right: 10px;
+    flex-shrink: 0;
+    max-width: 86px;
 
     @include respond-below($bp-sm) {
       margin-right: 6px;
@@ -406,7 +425,6 @@ a {
   }
 
   @include respond-below($bp-md) {
-    width: 100%;
     min-width: auto;
     min-height: 44px;
     font-size: 0.9rem;
@@ -421,7 +439,8 @@ a {
 
 @include respond-below($bp-md) {
   .button--hero {
-    min-width: auto;
+    max-width: 170px;
+    min-width: 170px;
   }
 }
 
@@ -511,6 +530,7 @@ a {
   @include respond-below($bp-sm) {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
 }
 
@@ -951,7 +971,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 
     @include respond-below($bp-sm) {
       height: 280px;
-      flex: 1 !important;
+      flex: 1;
     }
   }
 }
@@ -1050,6 +1070,10 @@ SECOND CLICK -> RETURN TO DEFAULT
 
 // --- Image 4 Hover Effect ---
 .features-image4 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+
   .features-image4-default,
   .features-image4-hover {
     position: absolute;
@@ -1059,6 +1083,7 @@ SECOND CLICK -> RETURN TO DEFAULT
     height: 100%;
     object-fit: cover;
     transition: opacity $transition-slow;
+    display: block;
   }
 
   .features-image4-default {
@@ -1079,6 +1104,12 @@ SECOND CLICK -> RETURN TO DEFAULT
     .features-image4-hover {
       opacity: 1;
     }
+  }
+
+  // Ensure image 4 stays visible on mobile
+  @include respond-below($bp-sm) {
+    height: 280px !important;
+    min-height: 280px;
   }
 }
 
