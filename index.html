@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DataPrizma — Digital Progress</title>
+    <meta name="description" content="DataPrizma — Technologies that change the rules of the game. Digital transformation, strategic planning, analytics and top products for your business." />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styleConverted.css" />
   </head>
 
   <body>
     <div class="page-shell">
+
+      <!-- ===================== HERO / HEADER ===================== -->
       <header class="hero-header" aria-label="Site hero section">
         <div class="hero-header__topbar">
-          <a href="#" aria-label="Go to homepage">
+
+          <a href="#" aria-label="DataPrizma — Go to homepage">
             <img
               class="logo-image"
               src="images/dataPrizmaLogo.svg"
-              alt="DataPrizma logo"
+              alt="DataPrizma"
             />
           </a>
 
@@ -44,10 +49,12 @@
               <img
                 class="button__icon"
                 src="images/enDown.svg"
-                alt="Language icon"
+                alt=""
+                aria-hidden="true"
               />
             </a>
           </div>
+
         </div>
 
         <div class="hero-content">
@@ -58,32 +65,32 @@
           </p>
 
           <div class="hero-buttons">
-            <a class="button button--hero button--primary" href="#contact"
-              >Contact</a
-            >
-            <a class="button button--hero button--ghost" href="#services"
-              >Services</a
-            >
+            <a class="button button--hero button--primary" href="#contact">Contact</a>
+            <a class="button button--hero button--ghost" href="#services">Services</a>
           </div>
         </div>
       </header>
-      <section class="press-section" aria-label="Press section">
-        <h2 class="press-heading">Пользующиеся доверием лидеров отрасли</h2>
+
+      <!-- ===================== PRESS / TRUSTED BY ===================== -->
+      <section class="press-section" aria-labelledby="press-heading">
+        <h2 id="press-heading" class="press-heading">Пользующиеся доверием лидеров отрасли</h2>
         <div class="press-logos">
           <div class="press-logos__row1">
-            <img src="images/press1.png" alt="Forbes logo" />
-            <img src="images/press2.png" alt="TechCrunch logo" />
-            <img src="images/press3.png" alt="Business Insider logo" />
+            <img src="images/press1.png" alt="Forbes" loading="lazy" />
+            <img src="images/press2.png" alt="TechCrunch" loading="lazy" />
+            <img src="images/press3.png" alt="Business Insider" loading="lazy" />
           </div>
           <div class="press-logos__row2">
-            <img src="images/press4.png" alt="VentureBeat logo" />
-            <img src="images/press5.png" alt="The Next Web logo" />
+            <img src="images/press4.png" alt="VentureBeat" loading="lazy" />
+            <img src="images/press5.png" alt="The Next Web" loading="lazy" />
           </div>
         </div>
       </section>
-      <section class="features-section" aria-label="Features section">
+
+      <!-- ===================== FEATURES / SERVICES ===================== -->
+      <section id="services" class="features-section" aria-labelledby="features-heading">
         <div class="features-heading">
-          <h2>
+          <h2 id="features-heading">
             Надежные услуги для вашего<br />
             успеха и процветания.
           </h2>
@@ -95,14 +102,14 @@
         <div class="features-container">
           <div class="features-container1">
             <div class="features-image-wrapper features-image1">
-              <img src="images/featureImg1.jpg" alt="" />
+              <img src="images/featureImg1.jpg" alt="Цифровая трансформация — профессиональный аудит" loading="lazy" />
               <div class="features-text">
                 <h3>ЦИФРОВАЯ ТРАНСФОРМАЦИЯ</h3>
                 <p>Профессиональный аудит: интеграция, адаптация и обучение</p>
               </div>
             </div>
             <div class="features-image-wrapper features-image2">
-              <img src="images/featureImg2.jpg" alt="" />
+              <img src="images/featureImg2.jpg" alt="Стратегическое планирование — разработка эффективных решений" loading="lazy" />
               <div class="features-text">
                 <h3>СТРАТЕГИЧЕСКОЕ ПЛАНИРОВАНИЕ</h3>
                 <p>Разработка и внедрение эффективных решений для роста</p>
@@ -112,7 +119,7 @@
 
           <div class="features-container2">
             <div class="features-image-wrapper features-image3">
-              <img src="images/featureImg3.jpg" alt="" />
+              <img src="images/featureImg3.jpg" alt="Аналитика и Insights — данные для правильных бизнес-решений" loading="lazy" />
               <div class="features-text">
                 <h3>АНАЛИТИКА И INSIGHTS</h3>
                 <p>
@@ -126,22 +133,25 @@
                 class="features-image4-default"
                 src="images/featureImg4.png"
                 alt=""
+                aria-hidden="true"
               />
               <img
                 class="features-image4-hover"
                 src="images/featureImg4Varient2.png"
                 alt=""
+                aria-hidden="true"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="products-section" aria-label="Products section">
+      <!-- ===================== PRODUCTS ===================== -->
+      <section id="products" class="products-section" aria-labelledby="products-heading">
         <div class="product-headings">
-          <div class="products-tag" aria-label="Категория">ПРОДУКТЫ</div>
+          <p class="products-tag" aria-label="Категория">ПРОДУКТЫ</p>
 
-          <h2 class="products-title">
+          <h2 id="products-heading" class="products-title">
             ТОПОВЫЕ ПРОДУКТЫ ДЛЯ ВАШЕГО
             <span>ВЫБОРА И УДОВЛЕТВОРЕНИЯ</span>
             <span>ПОТРЕБНОСТЕЙ.</span>
@@ -222,26 +232,29 @@
             </div>
           </div>
 
-          <div class="products-right" aria-label="Галерея продуктов">
+          <div class="products-right" aria-label="Галерея продуктов" aria-live="polite">
             <div class="product-image-container">
               <div class="product-image active" data-product="virtual-office">
                 <img
                   src="images/productImage1.jpg"
-                  alt="Virtual Office - Система для поддержки удаленной работы"
+                  alt="Virtual Office — система для поддержки удаленной работы"
+                  loading="lazy"
                 />
               </div>
 
               <div class="product-image" data-product="netdoc">
                 <img
                   src="images/productImage2.jpg"
-                  alt="NetDoc - Система обмена документами"
+                  alt="NetDoc — система обмена документами"
+                  loading="lazy"
                 />
               </div>
 
               <div class="product-image" data-product="d-hrm">
                 <img
                   src="images/productImage3.jpg"
-                  alt="D-Hrm - Система управления персоналом"
+                  alt="D-Hrm — система управления персоналом"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -249,158 +262,168 @@
         </div>
       </section>
 
-      <section class="testimonials-section" aria-label="Testimonials section">
-        <h1 class="testimonials-heading">
+      <!-- ===================== TESTIMONIALS ===================== -->
+      <section class="testimonials-section" aria-labelledby="testimonials-heading">
+        <h2 id="testimonials-heading" class="testimonials-heading">
           Ускорение дляг<br />лобальных компаний
-        </h1>
+        </h2>
         <div class="testimonials-container">
+
           <article class="testimonial-card">
-            <p class="testimonial-text">
-              “Мир разработки программного обеспечения постоянно меняется, и
-              инновации играют ключевую роль в этом процессе. Использование AI и
-              машинного обучения усиливает функциональность ПО, делая его более
-              интеллектуальным и адаптивным. Блокчейн обеспечивает безопасность
-              данных и создает прозрачные системы, что особенно важно в
-              финансовых и медицинских сферах. Связанные устройства создают
-              сеть, которая обогащает пользовательский опыт и управление
-              ресурсами. Низкопоточная Архитектура: Микросервисы и сервер-лесс
-              подходы повышают гибкость и упрощают масштабирование приложений.
-              Инновации в области кибербезопасности защищают данные от угроз и
-              создают устойчивые системы. Инновации в разработке ПО становятся
-              драйвером для создания более эффективных, безопасных и
-              интеллектуальных приложений, поднимая отрасль на новый уровень.”
-            </p>
+            <blockquote class="testimonial-text">
+              <p>
+                "Мир разработки программного обеспечения постоянно меняется, и
+                инновации играют ключевую роль в этом процессе. Использование AI и
+                машинного обучения усиливает функциональность ПО, делая его более
+                интеллектуальным и адаптивным. Блокчейн обеспечивает безопасность
+                данных и создает прозрачные системы, что особенно важно в
+                финансовых и медицинских сферах. Связанные устройства создают
+                сеть, которая обогащает пользовательский опыт и управление
+                ресурсами. Низкопоточная Архитектура: Микросервисы и сервер-лесс
+                подходы повышают гибкость и упрощают масштабирование приложений.
+                Инновации в области кибербезопасности защищают данные от угроз и
+                создают устойчивые системы. Инновации в разработке ПО становятся
+                драйвером для создания более эффективных, безопасных и
+                интеллектуальных приложений, поднимая отрасль на новый уровень."
+              </p>
+            </blockquote>
             <div class="testimonial-author">
               <img
                 class="testimonial-avatar"
                 src="images/avatar1.jpg"
                 alt="Yana Kovka"
+                loading="lazy"
               />
               <div class="testimonial-info">
-                <h3 class="testimonial-name">Yana Kovka</h3>
+                <cite class="testimonial-name">Yana Kovka</cite>
                 <p class="testimonial-title">Senior Front-End Developer</p>
               </div>
             </div>
           </article>
 
           <article class="testimonial-card">
-            <p class="testimonial-text">
-              “В мире промышленности инновации становятся ключевым фактором
-              успеха. Использование IoT и сенсоров позволяет следить за
-              состоянием оборудования в режиме реального времени, предотвращая
-              отказы и увеличивая производительность. Аналитика данных и
-              машинное обучение помогают предсказать потенциальные сбои в работе
-              оборудования, позволяя провести профилактические мероприятия.
-              Автоматизация процессов с помощью роботизированных систем снижает
-              ручной труд и повышает эффективность производства. Переход к
-              облачным платформам упрощает управление данными, обеспечивает
-              удаленный доступ и повышает гибкость в настройке оборудования.
-              Внедрение энергосберегающих решений, таких как LED-освещение и
-              оптимизация энергопотребления, помогает снизить затраты и
-              уменьшить воздействие на окружающую среду. Эти инновации не только
-              оптимизируют роизводственные процессы, но и содействуют
-              устойчивому развитию промышленности, делая ее более эффективной и
-              экологически безопасной.!”
-            </p>
+            <blockquote class="testimonial-text">
+              <p>
+                "В мире промышленности инновации становятся ключевым фактором
+                успеха. Использование IoT и сенсоров позволяет следить за
+                состоянием оборудования в режиме реального времени, предотвращая
+                отказы и увеличивая производительность. Аналитика данных и
+                машинное обучение помогают предсказать потенциальные сбои в работе
+                оборудования, позволяя провести профилактические мероприятия.
+                Автоматизация процессов с помощью роботизированных систем снижает
+                ручной труд и повышает эффективность производства. Переход к
+                облачным платформам упрощает управление данными, обеспечивает
+                удаленный доступ и повышает гибкость в настройке оборудования.
+                Внедрение энергосберегающих решений, таких как LED-освещение и
+                оптимизация энергопотребления, помогает снизить затраты и
+                уменьшить воздействие на окружающую среду. Эти инновации не только
+                оптимизируют роизводственные процессы, но и содействуют
+                устойчивому развитию промышленности, делая ее более эффективной и
+                экологически безопасной.!"
+              </p>
+            </blockquote>
             <div class="testimonial-author">
               <img
                 class="testimonial-avatar"
                 src="images/avatar2.jpg"
                 alt="Andrey Yaskin"
+                loading="lazy"
               />
               <div class="testimonial-info">
-                <h3 class="testimonial-name">Andrey Yaskin</h3>
+                <cite class="testimonial-name">Andrey Yaskin</cite>
                 <p class="testimonial-title">Middle UI Designer</p>
               </div>
             </div>
           </article>
 
           <article class="testimonial-card">
-            <p class="testimonial-text">
-              “Xотите обеспечить процветание вашего бизнеса в будущем?
-              Объедините людей с различными навыками и опытом. Это стимулирует
-              творчество и инновации.Определите ясные цели и направления.
-              Четкость в задачах помогает достичь успеха.Инвестируйте в обучение
-              и рост сотрудников. Поддержите их стремление к улучшению
-              навыков.Постройте открытую и эффективную коммуникацию внутри
-              команды. Доверие - ключевой элемент успеха.Поощряйте инициативу и
-              креативность. Это вдохновляет сотрудников на достижение великих
-              результатов. Создавайте талантливые команды сегодня - обеспечьте
-              успешное завтра вашего бизнеса!”
-            </p>
+            <blockquote class="testimonial-text">
+              <p>
+                "Xотите обеспечить процветание вашего бизнеса в будущем?
+                Объедините людей с различными навыками и опытом. Это стимулирует
+                творчество и инновации.Определите ясные цели и направления.
+                Четкость в задачах помогает достичь успеха.Инвестируйте в обучение
+                и рост сотрудников. Поддержите их стремление к улучшению
+                навыков.Постройте открытую и эффективную коммуникацию внутри
+                команды. Доверие - ключевой элемент успеха.Поощряйте инициативу и
+                креативность. Это вдохновляет сотрудников на достижение великих
+                результатов. Создавайте талантливые команды сегодня - обеспечьте
+                успешное завтра вашего бизнеса!"
+              </p>
+            </blockquote>
             <div class="testimonial-author">
               <img
                 class="testimonial-avatar"
                 src="images/avatar3.jpg"
                 alt="Ildar Zairov"
+                loading="lazy"
               />
               <div class="testimonial-info">
-                <h3 class="testimonial-name">Ildar Zairov</h3>
+                <cite class="testimonial-name">Ildar Zairov</cite>
                 <p class="testimonial-title">Project Manager</p>
               </div>
             </div>
           </article>
+
         </div>
       </section>
 
-      <footer class="footer" aria-label="Footer">
+      <!-- ===================== FOOTER ===================== -->
+      <footer id="contacts" class="footer" aria-label="Site footer">
         <div class="footer-content">
+
           <div class="footer-column footer-logo-column">
             <div class="footer-logo">
-              <img src="images/footerLogo.svg" alt="DataPrizma" />
+              <img src="images/footerLogo.svg" alt="DataPrizma" loading="lazy" />
             </div>
           </div>
 
-          <div class="footer-column">
+          <nav class="footer-column" aria-label="Products navigation">
             <h3 class="footer-heading">ПРОДУКТЫ</h3>
             <ul class="footer-list">
               <li><a href="#virtual-office">Virtual Office</a></li>
               <li><a href="#netdoc">NetDoc</a></li>
               <li><a href="#d-hrm">D-Hrm</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div class="footer-column">
+          <nav class="footer-column" aria-label="Services navigation">
             <h3 class="footer-heading">УСЛУГИ</h3>
             <ul class="footer-list">
-              <li>
-                <a href="#digital-transformation">Цифровая трансформация</a>
-              </li>
+              <li><a href="#digital-transformation">Цифровая трансформация</a></li>
               <li><a href="#software-development">Разработка ПО</a></li>
               <li><a href="#iot-automation">IoT и автоматизация</a></li>
             </ul>
-          </div>
+          </nav>
 
-          <div class="footer-column footer-contact-column">
+          <address class="footer-column footer-contact-column">
             <div class="footer-contact">
-              <a href="tel:+77666666776" class="footer-phone"
-                >+77 666 666 77 66</a
-              >
-              <a href="mailto:dataprizma@box.com" class="footer-email"
-                >dataprizma@box.com</a
-              >
+              <a href="tel:+77666666776" class="footer-phone">+77 666 666 77 66</a>
+              <a href="mailto:dataprizma@box.com" class="footer-email">dataprizma@box.com</a>
             </div>
             <div class="footer-socials">
-              <a href="#facebook" aria-label="Facebook" class="social-link"
-                ><img src="images/facebook-fill.svg" alt="Facebook"
-              /></a>
-              <a href="#instagram" aria-label="Instagram" class="social-link"
-                ><img src="images/instagram-fill.svg" alt="Instagram"
-              /></a>
-              <a href="#twitter" aria-label="Twitter" class="social-link"
-                ><img src="images/twitter-fill.svg" alt="Twitter"
-              /></a>
-              <a href="#youtube" aria-label="YouTube" class="social-link"
-                ><img src="images/youtube-fill.svg" alt="YouTube"
-              /></a>
+              <a href="#facebook" aria-label="DataPrizma on Facebook" class="social-link">
+                <img src="images/facebook-fill.svg" alt="" aria-hidden="true" />
+              </a>
+              <a href="#instagram" aria-label="DataPrizma on Instagram" class="social-link">
+                <img src="images/instagram-fill.svg" alt="" aria-hidden="true" />
+              </a>
+              <a href="#twitter" aria-label="DataPrizma on Twitter" class="social-link">
+                <img src="images/twitter-fill.svg" alt="" aria-hidden="true" />
+              </a>
+              <a href="#youtube" aria-label="DataPrizma on YouTube" class="social-link">
+                <img src="images/youtube-fill.svg" alt="" aria-hidden="true" />
+              </a>
             </div>
-          </div>
+          </address>
+
         </div>
 
         <div class="footer-bottom">
-          <p class="footer-copyright">© Copyright 2023. All Right Reserved.</p>
+          <small class="footer-copyright">© Copyright 2023. All Right Reserved.</small>
         </div>
       </footer>
-    </div>
+
+    </div><!-- /.page-shell -->
   </body>
 </html>
