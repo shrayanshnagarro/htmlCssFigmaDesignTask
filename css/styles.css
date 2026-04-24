@@ -415,12 +415,9 @@ main {
   animation: contentStates 640ms steps(1, end) forwards;
 }
 
-#hero-trigger:checked + label .hero-header .hero-text {
-  animation: removeHeroText 200ms steps(1, end) forwards;
-}
-
+#hero-trigger:checked + label .hero-header .hero-text,
 #hero-trigger:checked + label .hero-header .hero-buttons {
-  animation: removeHeroButtons 200ms steps(1, end) forwards;
+  animation: removeHeroText 200ms steps(1, end) forwards;
 }
 
 @keyframes heroShape {
@@ -457,7 +454,6 @@ main {
   }
   31% {
     display: block;
-    margin-top: 60px;
     opacity: 1;
   }
   65%, 100% {
@@ -474,22 +470,6 @@ main {
     display: block;
     max-height: 200px;
     margin-top: 28px;
-    opacity: 1;
-  }
-  100% {
-    display: none;
-    max-height: 0;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    overflow: hidden;
-  }
-}
-@keyframes removeHeroButtons {
-  0% {
-    display: flex;
-    max-height: 120px;
-    margin-top: 44px;
     opacity: 1;
   }
   100% {
