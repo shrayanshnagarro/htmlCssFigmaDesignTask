@@ -12,11 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styleConverted.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
-  <body>
-    <div class="page-shell">
+  <body class="page-shell">
 
       <!-- ===================== HERO / HEADER ===================== -->
       <input type="checkbox" id="hero-trigger" hidden>
@@ -90,27 +89,27 @@
           </p>
         </div>
         <div class="features-container">
-          <div class="features-container1">
-            <div class="features-image-wrapper features-image1">
+          <div class="features-container--1">
+            <div class="features-image-wrapper features-image-wrapper--1">
               <img src="images/featureImg1.jpg" alt="Цифровая трансформация — профессиональный аудит" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>ЦИФРОВАЯ ТРАНСФОРМАЦИЯ</h3>
                 <p>Профессиональный аудит: интеграция, адаптация и обучение</p>
               </div>
             </div>
-            <div class="features-image-wrapper features-image2">
+            <div class="features-image-wrapper features-image-wrapper--2">
               <img src="images/featureImg2.jpg" alt="Стратегическое планирование — разработка эффективных решений" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>СТРАТЕГИЧЕСКОЕ ПЛАНИРОВАНИЕ</h3>
                 <p>Разработка и внедрение эффективных решений для роста</p>
               </div>
             </div>
           </div>
 
-          <div class="features-container2">
-            <div class="features-image-wrapper features-image3">
+          <div class="features-container--2">
+            <div class="features-image-wrapper features-image-wrapper--3">
               <img src="images/featureImg3.jpg" alt="Аналитика и Insights — данные для правильных бизнес-решений" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>АНАЛИТИКА И INSIGHTS</h3>
                 <p>
                   Данные, которые принимают Данные, которые принимают Данные,
@@ -118,15 +117,15 @@
                 </p>
               </div>
             </div>
-            <div class="features-image-wrapper features-image4">
+            <div class="features-image-wrapper features-image-wrapper--4">
               <img
-                class="features-image4-default"
+                class="features-image-wrapper__img--default"
                 src="images/featureImg4.png"
                 alt=""
                 aria-hidden="true"
               />
               <img
-                class="features-image4-hover"
+                class="features-image-wrapper__img--hover"
                 src="images/featureImg4Varient2.png"
                 alt=""
                 aria-hidden="true"
@@ -182,10 +181,10 @@
                 class="product-item active"
                 data-product="virtual-office"
               >
-                <div class="product-header">
-                  <h3 class="product-name">Virtual Office</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">Virtual Office</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Система для поддержки удаленной работы, обеспечивающая
                   постоянную готовность к рабочему сотрудничеству и
                   взаимодействия с сотрудниками в основном, осуществляется в
@@ -198,10 +197,10 @@
                 class="product-item"
                 data-product="netdoc"
               >
-                <div class="product-header">
-                  <h3 class="product-name">NetDoc</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">NetDoc</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Система обмена договорами, электронными счетами, документами и
                   визитками между организациями посредством ЭЦП.
                 </p>
@@ -212,10 +211,10 @@
                 class="product-item"
                 data-product="d-hrm"
               >
-                <div class="product-header">
-                  <h3 class="product-name">D-Hrm</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">D-Hrm</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Инновационная цифровая система управления персоналом
                 </p>
               </label>
@@ -414,6 +413,5 @@
         </div>
       </footer>
 
-    </div>
   </body>
 </html>
