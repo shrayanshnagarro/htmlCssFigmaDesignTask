@@ -1,11 +1,10 @@
-@charset "UTF-8";
 :root {
   color-scheme: light;
   font-family: "Rubik", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #111827;
-  background: #000000;
+  background: #000;
 }
 
 *,
@@ -21,7 +20,7 @@ body {
 }
 
 body {
-  background: #000000;
+  background: #000;
 }
 
 img,
@@ -106,7 +105,6 @@ main {
 }
 @media (max-width: 540px) {
   .hero-header {
-    width: 100%;
     min-height: 600px;
     padding: 16px 12px;
     border-bottom-left-radius: 30px;
@@ -223,7 +221,7 @@ main {
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: transform 200ms ease-out, background-color 200ms ease-out, box-shadow 200ms ease-out;
+  transition: transform 250ms ease-out, background-color 250ms ease-out, box-shadow 250ms ease-out;
 }
 .button:hover, .button:focus-visible {
   transform: translateY(-2px);
@@ -232,8 +230,8 @@ main {
   animation: button-press 250ms ease-out;
 }
 .button--primary {
-  background: rgb(73, 78, 230);
-  color: #ffffff;
+  background: #494ee6;
+  color: #fff;
   box-shadow: 0 16px 34px rgba(67, 68, 255, 0.24);
 }
 .button--secondary {
@@ -249,7 +247,7 @@ main {
   background-size: cover;
   background-position: center;
   background-color: rgba(7, 45, 87, 0.14);
-  color: #ffffff;
+  color: #fff;
   border: 1px solid rgba(15, 23, 42, 0.12);
   position: relative;
 }
@@ -267,17 +265,16 @@ main {
   width: 16px;
   height: 16px;
   margin-left: 8px;
-  background: url("../images/rightArrow.svg") no-repeat center;
-  background-size: contain;
+  background: url("../images/rightArrow.svg") no-repeat center/contain;
 }
 .button__arrow {
   width: 3px;
 }
 .button__icon {
   width: 86px;
+  max-width: 86px;
   margin-right: 10px;
   flex-shrink: 0;
-  max-width: 86px;
 }
 @media (max-width: 540px) {
   .button__icon {
@@ -329,18 +326,15 @@ main {
 .hero-content {
   position: relative;
   z-index: 1;
-  margin-top: 100px;
+  margin: 100px auto 0;
   max-width: 920px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 .hero-content h1 {
   margin: 20px 0 0;
   font-family: "Rubik", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 72px;
   font-weight: 400;
-  font-style: normal;
   line-height: 115%;
   letter-spacing: -0.02em;
   text-align: center;
@@ -407,16 +401,12 @@ main {
   }
 }
 
-/* keep content above bg */
 .hero-header__topbar,
 .hero-content {
   position: relative;
   z-index: 2;
 }
 
-/* ====================================================
-CLICK -> Default → V2 → V4 → V5
-==================================================== */
 #hero-trigger:checked + label .hero-header {
   animation: heroShape 640ms ease-out forwards;
 }
@@ -425,21 +415,19 @@ CLICK -> Default → V2 → V4 → V5
   animation: contentStates 640ms steps(1, end) forwards;
 }
 
-#hero-trigger:checked + label .hero-header .hero-text,
-#hero-trigger:checked + label .hero-header .hero-buttons {
-  animation: hideSecondary 200ms ease-out forwards;
+#hero-trigger:checked + label .hero-header .hero-text {
+  animation: removeHeroText 200ms steps(1, end) forwards;
 }
 
-/* ====================================================
-VARIANT STATES
-==================================================== */
+#hero-trigger:checked + label .hero-header .hero-buttons {
+  animation: removeHeroButtons 200ms steps(1, end) forwards;
+}
+
 @keyframes heroShape {
-  /* DEFAULT */
   0% {
     min-height: 600px;
     border-radius: 0 0 615px 615px;
   }
-  /* ---------- Variant2 ---------- */
   31% {
     min-height: 500px;
     border-radius: 0 0 520px 520px;
@@ -448,7 +436,6 @@ VARIANT STATES
     min-height: 500px;
     border-radius: 0 0 520px 520px;
   }
-  /* ---------- Variant4 ---------- */
   65% {
     min-height: 360px;
     border-radius: 0 0 260px 260px;
@@ -457,13 +444,11 @@ VARIANT STATES
     min-height: 360px;
     border-radius: 0 0 260px 260px;
   }
-  /* ---------- Variant5 ---------- */
   100% {
     min-height: 120px;
     border-radius: 60px;
   }
 }
-/* hero-content disappears in V4 */
 @keyframes contentStates {
   0% {
     display: block;
@@ -475,15 +460,7 @@ VARIANT STATES
     margin-top: 60px;
     opacity: 1;
   }
-  65% {
-    display: none;
-    max-height: 0;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    overflow: hidden;
-  }
-  100% {
+  65%, 100% {
     display: none;
     max-height: 0;
     margin: 0;
@@ -492,14 +469,6 @@ VARIANT STATES
     overflow: hidden;
   }
 }
-#hero-trigger:checked + label .hero-header .hero-text {
-  animation: removeHeroText 200ms steps(1, end) forwards;
-}
-
-#hero-trigger:checked + label .hero-header .hero-buttons {
-  animation: removeHeroButtons 200ms steps(1, end) forwards;
-}
-
 @keyframes removeHeroText {
   0% {
     display: block;
@@ -532,13 +501,7 @@ VARIANT STATES
     overflow: hidden;
   }
 }
-/* ====================================================
-SECOND CLICK -> RETURN TO DEFAULT
-==================================================== */
-#hero-trigger:not(:checked) + label .hero-header {
-  transition: all 250ms ease-out;
-}
-
+#hero-trigger:not(:checked) + label .hero-header,
 #hero-trigger:not(:checked) + label .hero-header::before {
   transition: all 250ms ease-out;
 }
@@ -601,8 +564,8 @@ SECOND CLICK -> RETURN TO DEFAULT
   flex-direction: column;
   gap: 69px;
   justify-content: center;
-  width: 100%;
   align-items: center;
+  width: 100%;
 }
 .press-logos img {
   max-height: 52px;
@@ -797,7 +760,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 @media (max-width: 540px) {
   .features-container--1 .features-image-wrapper {
     height: 280px;
-    flex: 1 !important;
+    flex: 1;
   }
 }
 .features-container--2 .features-image-wrapper:first-child {
@@ -817,7 +780,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 @media (max-width: 540px) {
   .features-container--2 .features-image-wrapper:first-child {
     height: 280px;
-    flex: 1 !important;
+    flex: 1;
   }
 }
 .features-container--2 .features-image-wrapper:last-child {
@@ -873,10 +836,10 @@ SECOND CLICK -> RETURN TO DEFAULT
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 .features-image-wrapper__text h3 {
-  margin: 0 0 12px 0;
+  margin: 0 0 12px;
   font-size: 1.5rem;
   font-weight: 200;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
@@ -952,7 +915,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 }
 @media (max-width: 540px) {
   .features-image-wrapper--4 {
-    height: 280px !important;
+    height: 280px;
     min-height: 280px;
   }
 }
@@ -960,7 +923,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 .testimonials-section {
   width: min(1450px, 95%);
   padding: 48px 48px 60px;
-  background: rgb(255, 122, 0);
+  background: #ff7a00;
   display: flex;
   flex-direction: column;
 }
@@ -982,11 +945,10 @@ SECOND CLICK -> RETURN TO DEFAULT
 
 .testimonials-heading {
   font-weight: 200;
-  font-style: normal;
   font-size: 72px;
   line-height: 115%;
   letter-spacing: -0.02em;
-  color: rgb(27, 32, 33);
+  color: #1b2021;
   padding: 0 32px;
 }
 @media (max-width: 980px) {
@@ -1039,7 +1001,7 @@ SECOND CLICK -> RETURN TO DEFAULT
   display: flex;
   flex-direction: column;
   padding: 32px 0 0;
-  border-top: 1px solid #000000;
+  border-top: 1px solid #000;
 }
 @media (max-width: 720px) {
   .testimonial-card {
@@ -1110,7 +1072,7 @@ SECOND CLICK -> RETURN TO DEFAULT
   margin: 0;
   font-size: 0.85rem;
   font-weight: 400;
-  color: rgb(27, 32, 33);
+  color: #1b2021;
 }
 @media (max-width: 540px) {
   .testimonial-title {
@@ -1121,7 +1083,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 .products-section {
   width: min(1450px, 95%);
   padding: 48px 48px 60px;
-  background: rgb(73, 78, 230);
+  background: #494ee6;
   display: flex;
   flex-direction: column;
 }
@@ -1190,7 +1152,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 }
 
 .products-title {
-  color: #ffffff;
+  color: #fff;
   font-size: 56px;
   font-weight: 200;
   line-height: 1.15;
@@ -1356,7 +1318,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 }
 
 .product-item__name {
-  color: #ffffff;
+  color: #fff;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1388,11 +1350,6 @@ SECOND CLICK -> RETURN TO DEFAULT
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0.85;
   margin: 0;
-}
-@media (max-width: 1024px) {
-  .product-item__description {
-    font-size: 13px;
-  }
 }
 @media (max-width: 540px) {
   .product-item__description {
@@ -1453,7 +1410,6 @@ SECOND CLICK -> RETURN TO DEFAULT
 #product-netdoc:checked ~ .products-right .product-image[data-product=netdoc],
 #product-d-hrm:checked ~ .products-right .product-image[data-product=d-hrm] {
   opacity: 1;
-  pointer-events: auto;
 }
 
 #product-virtual-office:checked ~ .products-left label[for=product-virtual-office],
@@ -1475,7 +1431,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 }
 
 .footer {
-  background: rgb(27, 32, 33);
+  background: #1b2021;
   color: #e5e7eb;
   width: min(1450px, 95%);
   padding: 48px 48px 40px;
@@ -1570,7 +1526,7 @@ SECOND CLICK -> RETURN TO DEFAULT
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
 }
 @media (max-width: 980px) {
   .footer-heading {
@@ -1639,7 +1595,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 .footer-email {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   transition: color 180ms ease;
 }
@@ -1692,7 +1648,7 @@ SECOND CLICK -> RETURN TO DEFAULT
 .social-link:hover, .social-link:focus-visible {
   background: #1bb2d3;
   border-color: #1bb2d3;
-  color: #000000;
+  color: #000;
 }
 @media (max-width: 640px) {
   .social-link img {
