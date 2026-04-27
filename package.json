@@ -1,4 +1,16 @@
 {
+  "name": "scss-html-project",
+  "version": "1.0.0",
+  "description": "HTML + SCSS project using Figma design",
+  "author": "Shrayansh Jain",
+  "license": "MIT",
+
+  "scripts": {
+    "sass": "sass scss:css",
+    "sass:watch": "sass --watch scss:css",
+    "sass:minify": "sass scss:css --style=compressed"
+  },
+
   "devDependencies": {
     "sass": "^1.99.0"
   }

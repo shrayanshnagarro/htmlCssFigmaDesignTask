@@ -12,11 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rubik:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styleConverted.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
-  <body>
-    <div class="page-shell">
+  <body class="page-shell">
 
       <!-- ===================== HERO / HEADER ===================== -->
       <input type="checkbox" id="hero-trigger" hidden>
@@ -30,8 +29,8 @@
       
             <nav class="main-nav" aria-label="Primary navigation">
               <ul class="main-nav__list">
-                <li><a href="#products">Products</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#sec-products">Products</a></li>
+                <li><a href="#sec-services">Services</a></li>
                 <li><a href="#company">Company</a></li>
                 <li><a href="#contacts">Contacts</a></li>
               </ul>
@@ -47,40 +46,40 @@
           </div>
       
           <div class="hero-content">
-            <h1>DATAPRIZMA</h1>
-            <h1>цифровой прогресс</h1>
+            <h1>DATAPRIZMA <br />
+            цифровой прогресс</h1>
             <p class="hero-text">
               Технологии, Которые Меняют Правила Игры.
             </p>
       
             <div class="hero-buttons">
               <a class="button button--hero button--primary" href="#contact">Обратная связь</a>
-              <a class="button button--hero button--ghost" href="#services">Услуги</a>
+              <a class="button button--hero button--ghost" href="#sec-services">Услуги</a>
             </div>
           </div>
         </header>
       </label>
-
+      <main>
       <!-- ===================== PRESS / TRUSTED BY ===================== -->
-      <section class="press-section" aria-labelledby="press-heading">
-        <h2 id="press-heading" class="press-heading">Пользующиеся доверием лидеров отрасли</h2>
+      <section class="press-section" aria-labelledby="lbl-press">
+        <h2 id="lbl-press" class="press-heading">Пользующиеся доверием лидеров отрасли</h2>
         <div class="press-logos">
           <div class="press-logos__row1">
-            <img src="images/press1.png" alt="Forbes" loading="lazy" />
-            <img src="images/press2.png" alt="TechCrunch" loading="lazy" />
-            <img src="images/press3.png" alt="Business Insider" loading="lazy" />
+            <img src="images/press1.png" alt="Forbes"/>
+            <img src="images/press2.png" alt="TechCrunch"/>
+            <img src="images/press3.png" alt="Business Insider"/>
           </div>
           <div class="press-logos__row2">
-            <img src="images/press4.png" alt="VentureBeat" loading="lazy" />
-            <img src="images/press5.png" alt="The Next Web" loading="lazy" />
+            <img src="images/press4.png" alt="VentureBeat"/>
+            <img src="images/press5.png" alt="The Next Web"/>
           </div>
         </div>
       </section>
 
       <!-- ===================== FEATURES / SERVICES ===================== -->
-      <section id="services" class="features-section" aria-labelledby="features-heading">
+      <section id="sec-services" class="features-section" aria-labelledby="lbl-features">
         <div class="features-heading">
-          <h2 id="features-heading">
+          <h2 id="lbl-features">
             Надежные услуги для вашего<br />
             успеха и процветания.
           </h2>
@@ -90,27 +89,27 @@
           </p>
         </div>
         <div class="features-container">
-          <div class="features-container1">
-            <div class="features-image-wrapper features-image1">
+          <div class="features-container--1">
+            <div class="features-image-wrapper features-image-wrapper--1">
               <img src="images/featureImg1.jpg" alt="Цифровая трансформация — профессиональный аудит" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>ЦИФРОВАЯ ТРАНСФОРМАЦИЯ</h3>
                 <p>Профессиональный аудит: интеграция, адаптация и обучение</p>
               </div>
             </div>
-            <div class="features-image-wrapper features-image2">
+            <div class="features-image-wrapper features-image-wrapper--2">
               <img src="images/featureImg2.jpg" alt="Стратегическое планирование — разработка эффективных решений" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>СТРАТЕГИЧЕСКОЕ ПЛАНИРОВАНИЕ</h3>
                 <p>Разработка и внедрение эффективных решений для роста</p>
               </div>
             </div>
           </div>
 
-          <div class="features-container2">
-            <div class="features-image-wrapper features-image3">
+          <div class="features-container--2">
+            <div class="features-image-wrapper features-image-wrapper--3">
               <img src="images/featureImg3.jpg" alt="Аналитика и Insights — данные для правильных бизнес-решений" loading="lazy" />
-              <div class="features-text">
+              <div class="features-image-wrapper__text">
                 <h3>АНАЛИТИКА И INSIGHTS</h3>
                 <p>
                   Данные, которые принимают Данные, которые принимают Данные,
@@ -118,15 +117,15 @@
                 </p>
               </div>
             </div>
-            <div class="features-image-wrapper features-image4">
+            <div class="features-image-wrapper features-image-wrapper--4">
               <img
-                class="features-image4-default"
+                class="features-image-wrapper__img--default"
                 src="images/featureImg4.png"
                 alt=""
                 aria-hidden="true"
               />
               <img
-                class="features-image4-hover"
+                class="features-image-wrapper__img--hover"
                 src="images/featureImg4Varient2.png"
                 alt=""
                 aria-hidden="true"
@@ -137,11 +136,11 @@
       </section>
 
       <!-- ===================== PRODUCTS ===================== -->
-      <section id="products" class="products-section" aria-labelledby="products-heading">
+      <section id="sec-products" class="products-section" aria-labelledby="lbl-products">
         <div class="product-headings">
           <p class="products-tag" aria-label="Категория">ПРОДУКТЫ</p>
 
-          <h2 id="products-heading" class="products-title">
+          <h2 id="lbl-products" class="products-title">
             ТОПОВЫЕ ПРОДУКТЫ ДЛЯ ВАШЕГО
             <span>ВЫБОРА И УДОВЛЕТВОРЕНИЯ</span>
             <span>ПОТРЕБНОСТЕЙ.</span>
@@ -182,10 +181,10 @@
                 class="product-item active"
                 data-product="virtual-office"
               >
-                <div class="product-header">
-                  <h3 class="product-name">Virtual Office</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">Virtual Office</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Система для поддержки удаленной работы, обеспечивающая
                   постоянную готовность к рабочему сотрудничеству и
                   взаимодействия с сотрудниками в основном, осуществляется в
@@ -198,10 +197,10 @@
                 class="product-item"
                 data-product="netdoc"
               >
-                <div class="product-header">
-                  <h3 class="product-name">NetDoc</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">NetDoc</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Система обмена договорами, электронными счетами, документами и
                   визитками между организациями посредством ЭЦП.
                 </p>
@@ -212,10 +211,10 @@
                 class="product-item"
                 data-product="d-hrm"
               >
-                <div class="product-header">
-                  <h3 class="product-name">D-Hrm</h3>
+                <div class="product-item__header">
+                  <h3 class="product-item__name">D-Hrm</h3>
                 </div>
-                <p class="product-description">
+                <p class="product-item__description">
                   Инновационная цифровая система управления персоналом
                 </p>
               </label>
@@ -253,8 +252,8 @@
       </section>
 
       <!-- ===================== TESTIMONIALS ===================== -->
-      <section class="testimonials-section" aria-labelledby="testimonials-heading">
-        <h2 id="testimonials-heading" class="testimonials-heading">
+      <section class="testimonials-section" aria-labelledby="lbl-testimonials">
+        <h2 id="lbl-testimonials" class="testimonials-heading">
           Ускорение дляг<br />лобальных компаний
         </h2>
         <div class="testimonials-container">
@@ -357,6 +356,7 @@
 
         </div>
       </section>
+      </main>
 
       <!-- ===================== FOOTER ===================== -->
       <footer id="contacts" class="footer" aria-label="Site footer">
@@ -364,7 +364,7 @@
 
           <div class="footer-column footer-logo-column">
             <div class="footer-logo">
-              <img src="images/footerLogo.svg" alt="DataPrizma" loading="lazy" />
+              <img src="images/footerLogo.svg" alt="DataPrizma"/>
             </div>
           </div>
 
@@ -414,6 +414,5 @@
         </div>
       </footer>
 
-    </div>
   </body>
 </html>
