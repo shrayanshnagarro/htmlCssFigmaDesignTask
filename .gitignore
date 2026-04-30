@@ -1,0 +1,27 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Dependency directories 
+node_modules/
+
+# Logs
+*.log
+
+# SCSS compiled output (optional)
+*.css.map
+
+# If you're compiling SCSS → CSS and don't want to track CSS
+# (uncomment if needed)
+# *.css
+
+# Cache folders (if using any tools)
+.cache/
+.sass-cache/
+
+# Environment files (if any)
+.env
