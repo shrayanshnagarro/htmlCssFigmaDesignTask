@@ -81,6 +81,8 @@ $bp-xl: 980px;
 $bp-2xl: 1024px;
 $bp-3xl: 1200px;
 
+$max-products: 3;
+
 
 @mixin respond-below($bp) {
   @media (max-width: $bp) {
@@ -1418,29 +1420,26 @@ main {
   }
 }
 
-// --- Radio-controlled active states ---
-#product-virtual-office:checked
-  ~ .products-right
-  .product-image[data-product="virtual-office"],
-#product-netdoc:checked ~ .products-right .product-image[data-product="netdoc"],
-#product-d-hrm:checked ~ .products-right .product-image[data-product="d-hrm"] {
-  opacity: 1;
-}
+@for $i from 1 through $max-products {
+  .product-radio:nth-of-type(#{$i}):checked {
+    ~ .products-right .product-image:nth-child(#{$i}) {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-#product-virtual-office:checked
-  ~ .products-left
-  label[for="product-virtual-office"],
-#product-netdoc:checked ~ .products-left label[for="product-netdoc"],
-#product-d-hrm:checked ~ .products-left label[for="product-d-hrm"] {
-  border-left-color: $color-orange-highlight;
+    ~ .products-left .products-list .product-item:nth-child(#{$i}) {
+      border-left-color: $color-orange-highlight;
 
-  .product-item__name {
-    color: $color-orange-highlight;
-  }
-  .product-item__description {
-    display: block;
-    opacity: 1;
-    color: $color-product-desc-active;
+      .product-item__name {
+        color: $color-orange-highlight;
+      }
+
+      .product-item__description {
+        display: block;
+        opacity: 1;
+        color: $color-product-desc-active;
+      }
+    }
   }
 }
 
